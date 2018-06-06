@@ -16,8 +16,8 @@ module.exports.run = async (bot, message, args) => {
   .addField("Sebep", kReason)
   .setTimestamp();
 
-  let kickChannel = message.guild.channels.find(`name`, 'eoa_kick');
-  if(!kickChannel) return message.channel.send(":name_badge: **| Sunucuda `eoa_kick` kanalı bulunamadı.**");
+  let kickChannel = message.guild.channels.find(`name`, 'zp_kick');
+  if(!kickChannel) return message.channel.send(":name_badge: **| Sunucuda `zp_kick` kanalı bulunamadı.**");
    let embed = new Discord.RichEmbed()
   .setDescription("**KICK**")
   .setColor("#f45642")
