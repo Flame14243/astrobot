@@ -10,17 +10,17 @@
         const dbl = new DBL(process.env.DBL_TOKEN, bot);
 
 	bot.on('ready', () => {
-	console.log("Loading...");
+	console.log("Yukleniyor...");
 	setTimeout(function(){
-	console.log("Bot has been loaded completely.");
+	console.log("Basariyla yuklendi.");
 	}, 1000);
 	function botStatus() {
         let status = [
-            `My Default Prefix ${botconfig.prefix}.`,
-            `in ${bot.guilds.size} guilds.`,
-            `in ACH.`,
-            `with my dev Tritax#2924`,
-            `with ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users.`
+            `Prefix: ${botconfig.prefix}.`,
+            `Teşekkürler: ${bot.guilds.size} sunucu.`,
+            `Zappara Pro.`,
+            `Yapımcı: Enes Onur Ata#9427`,
+            `Teşekkürler ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} kullanıcı.`
         ];
         let rstatus = Math.floor(Math.random() * status.length);
 
@@ -36,7 +36,7 @@
 	if(err) console.log(err);
 	let jsfile = files.filter(f => f.split(".").pop() === "js");
 	if(jsfile.length <= 0){
-	console.log("Couldn't find commands.");
+	console.log("Komutlar bulunamadi.");
 	return;
 	}
 
@@ -61,9 +61,9 @@
 	if(message.channel.type === 'dm') return ;
         if(message.content.toLowerCase() === '<@421925809532436481>'){
         let embed = new Discord.RichEmbed()
-       .setTitle("Tritax AI")
+       .setTitle("Zappara Pro")
        .addField("Prefix", `\`${prefix}\``, true)
-       .addField("Help", `\`${prefix}help\``, true)
+       .addField("Yardım", `\`${prefix}yardım\``, true)
        .setThumbnail(bot.user.displayAvatarURL)
        .setColor(`${message.guild.me.displayHexColor!=='#000000' ? message.guild.me.displayHexColor : 0xffffff}`);
         message.channel.send(embed);
@@ -79,7 +79,7 @@
 	try {
 	let commandFile = require(`./commands/${cmd}.js`);
 	commandFile.run(bot, message, args);
-	if(!commandFile) return message.channel.send("No command found with that name.");
+	if(!commandFile) return message.channel.send("Bu isimde bir komut yok!");
 	} catch (e) { console.log(e) }
 
 	if(!coins[message.author.id]){
@@ -130,68 +130,70 @@
 
 	});
 	bot.on('guildMemberAdd', member => {
-    bot.channels.get('439792255365021696').setName(`Total Users: ${member.guild.memberCount}`)
+    bot.channels.get('450952678781091842').setName(`Total Users: ${member.guild.memberCount}`)
     let humans = member.guild.members.filter(m => !m.user.bot).size;
-    bot.channels.get('439793088001736725').setName(`Member Count: ${humans}`)
+    bot.channels.get('450952771752034305').setName(`Member Count: ${humans}`)
     let bots = member.guild.members.filter(m => m.user.bot).size;
-    bot.channels.get('439793716052623361').setName(`Bot Count: ${bots}`)
+    bot.channels.get('450952839389511681').setName(`Bot Count: ${bots}`)
 	const members = member.guild.memberCount;
 	const channel = member.guild.channels.find('name', 'member-log');
 	if (!channel) return;
 	
-       let Role = member.guild.roles.find(`name`, "Bots");
+       let Role = member.guild.roles.find(`name`, "Bot");
        if(member.user.bot){
 	member.addRole(Role.id)
        }else{
-      let role = member.guild.roles.find(`name`, "User");
+      let role = member.guild.roles.find(`name`, "Üye"
 	member.addRole(role.id)
        }
  
 	let Embed = new Discord.RichEmbed()
-	.setFooter(`User Joined | Members- ${member.guild.memberCount}`)
+	.setFooter(`Üye Katıldı | Kaç Kişi Olduk » ${member.guild.memberCount}`)
 	.setColor("#cde246")    
-	.setAuthor(`${member.displayName} has joined ${member.guild.name}`, member.user.displayAvatarURL)
+	.setAuthor(`${member.displayName} isimli üyemiz ${member.guild.name} isimli sunucudan ayrıldı`, member.user.displayAvatarURL)
 	.setTimestamp()
 	channel.send(Embed);
 	});
+	
 	bot.on('guildMemberRemove', member => {
-    bot.channels.get('439792255365021696').setName(`Total Users: ${member.guild.memberCount}`)
+    bot.channels.get('450952678781091842').setName(`Toplam Üye: ${member.guild.memberCount}`)
     let humans = member.guild.members.filter(m => !m.user.bot).size;
-    bot.channels.get('439793088001736725').setName(`Member Count: ${humans}`)
+    bot.channels.get('450952771752034305').setName(`Üye Sayısı: ${humans}`)
     let bots = member.guild.members.filter(m => m.user.bot).size;
-    bot.channels.get('439793716052623361').setName(`Bot Count: ${bots}`)
-	const channel = member.guild.channels.find(`name`, 'member-log');
+    bot.channels.get('450952839389511681').setName(`Bot Sayısı: ${bots}`)
+	
+	const channel = member.guild.channels.find(`name`, 'zp_çıkış');
 	if(!channel) return; 
 	let Embed = new Discord.RichEmbed()
 	.setColor("#e26346")
-	.setAuthor(`${member.displayName}, has left ${member.guild.name}.`, member.user.displayAvatarURL)
+	.setAuthor(`${member.displayName} isimli üyemiz ${member.guild.name} isimli sunucuya katıldı.`, member.user.displayAvatarURL)
 	.setTimestamp()
-	.setFooter(`User Left | Members- ${member.guild.memberCount}`)
+	.setFooter(`Üye Ayrıldı | Kaç Kişi Olduk » ${member.guild.memberCount}`)
 	channel.send(Embed);
 	});
 
 	bot.on('guildCreate', guild => {
-	      let channel = bot.channels.get("428564028239904790")
+	      let channel = bot.channels.get("450955859510427650")
         const embed = new Discord.RichEmbed()
         .setColor("#cde246")
-        .setAuthor(`Joined ${guild.name}`)
+        .setAuthor(`Katıldım » ${guild.name}`)
         .setThumbnail(guild.iconURL)
-        .addField("Owner", guild.owner.user.tag)
+        .addField("Kurucu", guild.owner.user.tag)
         .addField("ID", guild.id, true)
-        .addField("Users", guild.memberCount, true)
-        .addField("Channels", guild.channels.size, true)
+        .addField("Üye Sayısı", guild.memberCount, true)
+        .addField("Kanal Sayısı", guild.channels.size, true)
          channel.send(embed);
 	});
 	bot.on('guildDelete', guild => {
-	      let channel = bot.channels.get("428564028239904790")
+	      let channel = bot.channels.get("450955966158995456")
         const embed = new Discord.RichEmbed()
         .setColor("#cde246")
-        .setAuthor(`Left ${guild.name}`)
+        .setAuthor(`Ayrıldım » ${guild.name}`)
         .setThumbnail(guild.iconURL)
-        .addField("Owner", guild.owner.user.tag)
+        .addField("Kurucu", guild.owner.user.tag)
         .addField("ID", guild.id, true)
-        .addField("Users", guild.memberCount, true)
-        .addField("Channels", guild.channels.size, true)
+        .addField("Üye Sayısı", guild.memberCount, true)
+        .addField("Kanal Sayısı", guild.channels.size, true)
          channel.send(embed);
 	});
 	bot.login(process.env.BOT_TOKEN);
