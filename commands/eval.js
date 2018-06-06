@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
  let embed = new Discord.RichEmbed()
   .setTitle("Evaluation")
-  .setDescription("Sorry, the `eval` command can only be executed by the Developer.")
+  .setDescription("Üzgünüm, `eval` komutunu sadece yapımcısı @Enes Onur Ata#9427 kullanabilir.")
   .setColor("#cdf785");
   if(message.author.id !== '414111663076147201') return message.channel.send(embed);
   
@@ -21,14 +21,14 @@ module.exports.run = async (bot, message, args) => {
 
   let embed = new Discord.RichEmbed()
       .setTitle(`Evaluated in ${Math.round(bot.ping)}ms`)
-      .addField(":inbox_tray: Input", `\`\`\`js\n${code}\n\`\`\``)
-      .addField(":outbox_tray: Output", `\`\`\`js\n${clean(evaled).replace(bot.token, "Are you retarded?")}\n\`\`\``)
+      .addField(":inbox_tray: Girdi", `\`\`\`js\n${code}\n\`\`\``)
+      .addField(":outbox_tray: Çıktı", `\`\`\`js\n${clean(evaled).replace(bot.token, "Özürlü müsün?")}\n\`\`\``)
       .addField('Type', `\`\`\`xl\n${(typeof rawEvaled).substr(0, 1).toUpperCase() + (typeof rawEvaled).substr(1)}\n\`\`\``)
       .setColor('GREEN');
       message.channel.send({embed});
     } catch (err) {
       
-      message.channel.send(`\`ERROR\` \`\`\`js\n${clean(err)}\n\`\`\``);
+      message.channel.send(`\`HATA\` \`\`\`js\n${clean(err)}\n\`\`\``);
     }
 }
 
