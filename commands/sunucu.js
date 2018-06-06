@@ -25,30 +25,27 @@ module.exports.run = async (bot, message, args) => {
   roles = roles.join(", ");
 
   let embed = new Discord.RichEmbed()
-  .setTitle(`Server Stats`)
+  .setTitle(`Sunucu İstatistikleri`)
   .setColor(botconfig.white)
   .setThumbnail(icon)
-  .addField('Guild Name', guild.name, true)
-  .addField('Guild ID', guild.id, true)
-  .addField('Guild Owner', `${guild.owner.user.tag}`, true)
-  .addField('Created At', `${createdAt[0]} ${createdAt[2]} ${createdAt[1]} ${createdAt[3]}`, true)
-  .addField('Region', guild.region.toUpperCase(), true)
-  .addField('Total Members:', guild.memberCount, true)
-  .addField('Bots:', bots, true)
-  .addField('Users:', humans, true)
+  .addField('Sunucu İsmi', guild.name, true)
+  .addField('Sunucu ID', guild.id, true)
+  .addField('Sunucu Sahibi', `${guild.owner.user.tag}`, true)
+  .addField('Oluşturulma Tarihi', `${createdAt[0]} ${createdAt[2]} ${createdAt[1]} ${createdAt[3]}`, true)
+  .addField('Bölge', guild.region.toUpperCase(), true)
+  .addField('Toplam Üye:', guild.memberCount, true)
+  .addField('Bot Sayısı:', bots, true)
+  .addField('Kullanıcı Sayısı:', humans, true)
   .addField('Verification Level', guild.verificationLevel, true)
-  .addField('Text Channels', textChannels, true)
-  .addField('Voice Channels', voiceChannels, true)
-  .addField(`Roles`, `${guild.roles.size}`, true)
-  .addField(`Emojis`, `${guild.emojis.size}`, true)
+  .addField('Yazı Kanalları', textChannels, true)
+  .addField('Sesli kanallar', voiceChannels, true)
+  .addField(`Roller`, `${guild.roles.size}`, true)
+  .addField(`Emojiler`, `${guild.emojis.size}`, true)
 
   return message.channel.send(embed);
 }
 
 
 module.exports.help = {
-  name: "serverstats"
+  name: "sunucu"
 }
-
-
-
