@@ -3,17 +3,17 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
 let embed = new Discord.RichEmbed()
-    .setTitle("<:TAmod:444855093569781760> Moderation")
-    .addField("`" + message.prefix + "ban`", "Ban a member.")
-    .addField("`" + message.prefix + "unban`", "Un-ban a member. [Requires id]")
-    .addField("`" + message.prefix +"clear`", "Clear messages")
-    .addField("`" + message.prefix +"kick`", "Kick a member.")
-    .addField("`" + message.prefix +"tempmute`", "Temporarily mute a member.")
-    .addField("`" + message.prefix +"unmute`", "Unmute a member.")
-    .addField("`" + message.prefix +"msent`", "Check messages sent so far.")
-    .addField("`" + message.prefix +"purge`", "Clears a member's messages.")
-    .addField("`" + message.prefix +"warn`", "Warn a member.")
-    .addField("`" + message.prefix +"warnlvl`", "Check a user's warn level.")
+    .setTitle(":tool: Moderasyon")
+    .addField("`" + message.prefix + "ban`", "Üyeyi banlarsın")
+    .addField("`" + message.prefix + "unban`", "Üyenin banını kaldırırsın")
+    .addField("`" + message.prefix +"clear`", "Mesajları temizlersin")
+    .addField("`" + message.prefix +"kick`", "Üyeyi atarsın")
+    .addField("`" + message.prefix +"tempmute`", "Üyeyi geçici olarak sessize al.")
+    .addField("`" + message.prefix +"unmute`", "Üyenin sessizliğini kaldırır")
+    .addField("`" + message.prefix +"msent`", "Şimdiye kadar gönderilen mesajları kontrol et.")
+    .addField("`" + message.prefix +"purge`", "Bir üyenin mesajlarını temizler.")
+    .addField("`" + message.prefix +"warn`", "Üyeyi uyarırsın")
+    .addField("`" + message.prefix +"warnlvl`", "Bir kullanıcının uyarısını kontrol edin.")
     .setFooter("Require mod-log channel.")
 
 message.channel.send(embed);
