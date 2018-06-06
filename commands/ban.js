@@ -2,29 +2,29 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(bUser === message.author) return message.channel.send("Are you retarded? Why do you want to ban yourself?")
-    if(!bUser) return message.channel.send("Can't find user!");
+  if(bUser === message.author) return message.channel.send("Özürlü müsün? Neden kendini yasaklamak istiyorsun?")
+    if(!bUser) return message.channel.send(":name_badge: **| Üye bulunamadı.** Lütfen @üye şeklinde etiketleyin yada ID sini girin");
     let bReason = args.join(" ").slice(22);
-   if(!bReason) return message.channel.send("Please provide a reason!")
-    if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("<:tickNo:432418492667396097> **| You don't have `BAN_MEMBERS` permissons.**");
+   if(!bReason) return message.channel.send(":pencil2: **| Lütfen bir sebep belirtin!**")
+    if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(":no_entry_sign: **| Senin `BAN_MEMBERS` yetkin yok.**");
 
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("Ban")
+    .setDescription("**BAN**")
     .setColor("#bc0000")
-    .addField("User", bUser.user.tag)
-    .addField("Moderator", message.author.tag)
-    .addField("Reason", bReason)
+    .addField("Üye", bUser.user.tag)
+    .addField("Yetkili", message.author.tag)
+    .addField("Sebep", bReason)
     .setTimestamp()
-    let incidentchannel = message.guild.channels.find(`name`, "mod-log");
-    if(!incidentchannel) return message.channel.send("<:tickNo:432418492667396097> **| Can't find `mod-log` channel.**");
+    let incidentchannel = message.guild.channels.find(`name`, "eoa_ban");
+    if(!incidentchannel) return message.channel.send(":name_badge: **| Sunucuda `eoa_ban` kanalı bulunamadı.**");
     let embed = new Discord.RichEmbed()
     .setTitle("BAN")
-    .addField("Banned In", message.guild.name)
+    .addField("Adı", message.guild.name)
     .setColor("#bc0000")
-    .addField("Moderator", message.author.tag)
-    .addField("Reason", bReason)
+    .addField("Yetkili", message.author.tag)
+    .addField("Sebep", bReason)
     bUser.send(embed);
-  message.channel.send("<:tickYes:432418492889694210> **| That member has been banned.**")
+  message.channel.send(":white_check_mark:  **| Üye başarıyla yasaklandı.**")
   bUser.ban(bReason)
   incidentchannel.send(banEmbed);
 }
