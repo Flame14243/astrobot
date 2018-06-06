@@ -8,8 +8,8 @@ module.exports.run = async(bot, message, args) => {
             .then(url => {
                 const embed = new Discord.RichEmbed()
                 
-                .setTitle(`Ass`)
-                .setFooter(`Requested by ${message.author.tag}`)
+                .setTitle(`:underage: Popo`)
+                .setFooter(`Popo görmek isteyen ${message.author.tag}`)
                 .setImage(url)
                 .setColor(`${message.guild.me.displayHexColor!=='#000000' ? message.guild.me.displayHexColor : 0xffffff}`)
     return message.channel.send({ embed });
@@ -17,5 +17,5 @@ module.exports.run = async(bot, message, args) => {
   }
 }
 module.exports.help = {
-	name: "ass"
+	name: "popo"
 }
