@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("#00FF00")
   .addField("💸", uCoins);
 
-    message.channel.send(":white_check_mark: | **A private message has been send!**")
+    message.channel.send(":white_check_mark: | ** Özelden gönderdim kontrol et!**")
   message.author.send(coinEmbed).then(message =>{message.react("🤑")});
 }
 
