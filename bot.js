@@ -6,8 +6,9 @@
 	const coins = require("./coins.json");
 	const xp = require("./xp.json");
 	const db = require('quick.db');
+	/*
         const DBL = require("dblapi.js");
-        const dbl = new DBL(process.env.DBL_TOKEN, bot);
+        const dbl = new DBL(process.env.DBL_TOKEN, bot);*/
 
 	bot.on('ready', () => {
 	console.log("Yukleniyor...");
@@ -130,20 +131,20 @@
 
 	});
 	bot.on('guildMemberAdd', member => {
-    bot.channels.get('450952678781091842').setName(`Total Users: ${member.guild.memberCount}`)
+    bot.channels.get('450952678781091842').setName(`Toplam Üye Sayısı: ${member.guild.memberCount}`)
     let humans = member.guild.members.filter(m => !m.user.bot).size;
-    bot.channels.get('450952771752034305').setName(`Member Count: ${humans}`)
+    bot.channels.get('450952771752034305').setName(`Üye Sayısı: ${humans}`)
     let bots = member.guild.members.filter(m => m.user.bot).size;
-    bot.channels.get('450952839389511681').setName(`Bot Count: ${bots}`)
+    bot.channels.get('450952839389511681').setName(`Bot Sayısı: ${bots}`)
 	const members = member.guild.memberCount;
-	const channel = member.guild.channels.find('name', 'member-log');
+	const channel = member.guild.channels.find('name', 'zp_giriş');
 	if (!channel) return;
 	
        let Role = member.guild.roles.find(`name`, "Bot");
        if(member.user.bot){
 	member.addRole(Role.id)
        }else{
-      let role = member.guild.roles.find(`name`, "Üye"
+      let role = member.guild.roles.find(`name`, "Üye");
 	member.addRole(role.id)
        }
  
@@ -156,7 +157,7 @@
 	});
 	
 	bot.on('guildMemberRemove', member => {
-    bot.channels.get('450952678781091842').setName(`Toplam Üye: ${member.guild.memberCount}`)
+    bot.channels.get('450952678781091842').setName(`Toplam Üye Sayısı: ${member.guild.memberCount}`)
     let humans = member.guild.members.filter(m => !m.user.bot).size;
     bot.channels.get('450952771752034305').setName(`Üye Sayısı: ${humans}`)
     let bots = member.guild.members.filter(m => m.user.bot).size;
