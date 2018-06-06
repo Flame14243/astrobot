@@ -2,21 +2,17 @@ const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
   let embed = new Discord.RichEmbed()
-    .setTitle("Categories")
-    .setAuthor("85 Commands", bot.user.displayAvatarURL)
-    .addField("Moderation", "`" + message.prefix + "mod`", true)
-    .addField("Games", "`" + message.prefix + "games`", true)
-    .addField("Anime", "`" + message.prefix + "animecmds`", true)
-    .addField("Music", "`" + message.prefix + "music`", true)
-    .addField("NSFW", "`" + message.prefix + "nsfw`", true)
-    .addField("Core", "`" + message.prefix + "core`", true)
-    .addField("Utils", "`" + message.prefix + "utils`", true)
-    .addField("Fun", "`" + message.prefix + "fun`", true)
-    .addField("Statistics", "`" + message.prefix + "statistics`", true)
-    .addField("Developer", "`" + message.prefix + "dev`", true)
-  .setFooter("If you found a bug please report it using " + message.prefix + "bugreport")
+    .setTitle("KATEGORİLER")
+    .setAuthor("85 Tane Komut Var", bot.user.displayAvatarURL)
+    .addField("Moderasyon", "`" + message.prefix + "moderasyon`", true)
+    .addField("Oyunlar", "`" + message.prefix + "oyunlar`", true)
+    .addField("Müzik", "`" + message.prefix + "müzik`", true)
+    .addField("Eğlence", "`" + message.prefix + "eğlence`", true)
+    .addField("İstatistikler", "`" + message.prefix + "istatistikler`", true)
+    .addField("Admin", "`" + message.prefix + "admin`", true)
+  .setFooter("Gördüğünüz tüm komutlar JavaScript'tir » " + message.prefix + "yardım" + " » Botun Sahibi: Enes Onur Ata#9427")
     message.channel.send(embed);
 }
 module.exports.help = {
-    name: "help"
+    name: "yardım"
 }
