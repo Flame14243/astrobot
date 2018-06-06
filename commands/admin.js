@@ -13,5 +13,5 @@ message.channel.send(embed);
 }
 
 module.exports.help = {
-  name: "dev"
+  name: "admin"
 }
