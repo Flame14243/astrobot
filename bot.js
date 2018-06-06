@@ -33,7 +33,7 @@
 	})
 
 	fs.readdir("./commands/", (err, files) => {
-    console.log(`Loaded ${files.length} commands.`)
+    console.log(`Yuklendi ${files.length} komut.`)
 	if(err) console.log(err);
 	let jsfile = files.filter(f => f.split(".").pop() === "js");
 	if(jsfile.length <= 0){
