@@ -8,12 +8,12 @@ module.exports.run = async(bot, message, args) => {
             .then(url => {
                 const embed = new Discord.RichEmbed()
                 
-                .setAuthor(`${message.author.tag} | Your dog!`, message.author.displayAvatarURL)
+                .setAuthor(`${message.author.tag} | Senin Köpeğin!`, message.author.displayAvatarURL)
                 .setImage(url)
                 .setColor(`${message.guild.me.displayHexColor!=='#000000' ? message.guild.me.displayHexColor : 0xffffff}`)
     return message.channel.send({ embed });
             })
 }
 module.exports.help = {
-	name: "dog"
+	name: "köpek"
 }
