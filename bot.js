@@ -17,11 +17,11 @@
 	}, 1000);
 	function botStatus() {
         let status = [
-            `Prefix: ${botconfig.prefix}.`,
-            `Teşekkürler: ${bot.guilds.size} sunucu.`,
+            `Prefix » ${botconfig.prefix}.`,
+            `Teşekkürler » ${bot.guilds.size} sunucu.`,
             `Zappara Pro.`,
-            `Yapımcı: Enes Onur Ata#9427`,
-            `Teşekkürler ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} kullanıcı.`
+            `Yapımcı » Enes Onur Ata#9427`,
+            `Teşekkürler » ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} kullanıcı.`
         ];
         let rstatus = Math.floor(Math.random() * status.length);
 
