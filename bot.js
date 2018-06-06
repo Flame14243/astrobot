@@ -194,4 +194,4 @@
         .addField("Channels", guild.channels.size, true)
          channel.send(embed);
 	});
-	bot.login(process.env.TOKEN);
+	bot.login(process.env.BOT_TOKEN);
