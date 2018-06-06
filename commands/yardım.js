@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
   let embed = new Discord.RichEmbed()
     .setTitle("KATEGORİLER")
     .setAuthor("85 Tane Komut Var", bot.user.displayAvatarURL)
-    .addField("Moderasyon", "`" + message.prefix + "moderasyon`", true)
+    .addField("Moderasyon", "`" + message.prefix + "mod`", true)
     .addField("Oyunlar", "`" + message.prefix + "oyunlar`", true)
     .addField("Müzik", "`" + message.prefix + "müzik`", true)
     .addField("Eğlence", "`" + message.prefix + "eğlence`", true)
