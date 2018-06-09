@@ -1,5 +1,5 @@
 	const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
+const ayarlar = require('../botconfig.json');
 
 exports.run = (client, message, args) => {
 if (message.author.id != 375686478363099138) { return; }
