@@ -131,11 +131,11 @@
 
 	});
 	bot.on('guildMemberAdd', member => {
-    bot.channels.get('450952678781091842').setName(`Toplam Üye Sayısı: ${member.guild.memberCount}`)
+    bot.channels.get('451091996287696910').setName(`Toplam Üye Sayısı: ${member.guild.memberCount}`)
     let humans = member.guild.members.filter(m => !m.user.bot).size;
-    bot.channels.get('450952771752034305').setName(`Üye Sayısı: ${humans}`)
+    bot.channels.get('453198762102489098').setName(`Üye Sayısı: ${humans}`)
     let bots = member.guild.members.filter(m => m.user.bot).size;
-    bot.channels.get('450952839389511681').setName(`Bot Sayısı: ${bots}`)
+    bot.channels.get('453199063958159370').setName(`Bot Sayısı: ${bots}`)
 	const members = member.guild.memberCount;
 	const channel = member.guild.channels.find('name', 's-log');
 	if (!channel) return;
@@ -157,13 +157,13 @@
 	});
 	
 	bot.on('guildMemberRemove', member => {
-    bot.channels.get('450952678781091842').setName(`Toplam Üye Sayısı: ${member.guild.memberCount}`)
+    bot.channels.get('453199237459738625').setName(`Toplam Üye Sayısı: ${member.guild.memberCount}`)
     let humans = member.guild.members.filter(m => !m.user.bot).size;
-    bot.channels.get('450952771752034305').setName(`Üye Sayısı: ${humans}`)
+    bot.channels.get('453199322255851521').setName(`Üye Sayısı: ${humans}`)
     let bots = member.guild.members.filter(m => m.user.bot).size;
-    bot.channels.get('450952839389511681').setName(`Bot Sayısı: ${bots}`)
+    bot.channels.get('453199491835887616').setName(`Bot Sayısı: ${bots}`)
 	
-	const channel = member.guild.channels.find(`name`, 's-log);
+	const channel = member.guild.channels.find(`name`, 's-log');
 	if(!channel) return; 
 	let Embed = new Discord.RichEmbed()
 	.setColor("#e26346")
@@ -186,7 +186,7 @@
          channel.send(embed);
 	});
 	bot.on('guildDelete', guild => {
-	      let channel = bot.channels.get("450955966158995456")
+	      let channel = bot.channels.get("451091996287696909")
         const embed = new Discord.RichEmbed()
         .setColor("#cde246")
         .setAuthor(`Ayrıldım » ${guild.name}`)
