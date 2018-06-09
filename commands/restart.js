@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) =>{
   .setTitle("Yeniden Başlatıldı")
   .setDescription("Üzgünüm , `restart` komutunu botun sahibi kullanabilir.")
   .setColor("#cdf785");
-  if(message.author.id !== '274551537139712001') return message.channel.send(embed);
+  if(message.author.id !== '419936204117770241') return message.channel.send(embed);
   
 message.channel.send(`Bot yeniden başlatıldı ${Math.floor(bot.ping)}ms`).then(() =>{
 process.exit(1);
