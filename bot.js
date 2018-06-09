@@ -19,8 +19,8 @@
         let status = [
             `Prefix » ${botconfig.prefix}.`,
             `Teşekkürler » ${bot.guilds.size} sunucu.`,
-            `Zappara Pro.`,
-            `Yapımcı » Enes Onur Ata#9427`,
+            `Enes Onur Ata Çok Teşekkür Ederim Yardımların İçin.`,
+            `Yapımcı » Yusuf Bülbül`,
             `Teşekkürler » ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} kullanıcı.`
         ];
         let rstatus = Math.floor(Math.random() * status.length);
@@ -137,7 +137,7 @@
     let bots = member.guild.members.filter(m => m.user.bot).size;
     bot.channels.get('450952839389511681').setName(`Bot Sayısı: ${bots}`)
 	const members = member.guild.memberCount;
-	const channel = member.guild.channels.find('name', 'zp_giriş');
+	const channel = member.guild.channels.find('name', 's-log');
 	if (!channel) return;
 	
        let Role = member.guild.roles.find(`name`, "Bot");
@@ -163,7 +163,7 @@
     let bots = member.guild.members.filter(m => m.user.bot).size;
     bot.channels.get('450952839389511681').setName(`Bot Sayısı: ${bots}`)
 	
-	const channel = member.guild.channels.find(`name`, 'zp_çıkış');
+	const channel = member.guild.channels.find(`name`, 's-log);
 	if(!channel) return; 
 	let Embed = new Discord.RichEmbed()
 	.setColor("#e26346")
