@@ -3,9 +3,9 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
  let embed = new Discord.RichEmbed()
   .setTitle("Evaluation")
-  .setDescription("Üzgünüm, `eval` komutunu sadece yapımcısı @Enes Onur Ata#9427 kullanabilir.")
+  .setDescription("Üzgünüm, `eval` komutunu sadece yapımcısı Yusuf Bülbül kullanabilir.")
   .setColor("#cdf785");
-  if(message.author.id !== '274551537139712001') return message.channel.send(embed);
+  if(message.author.id !== '419936204117770241') return message.channel.send(embed);
   
   function clean(text) {
   if (typeof(text) === "string")
