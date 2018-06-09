@@ -21,7 +21,7 @@ setInterval(function() {
 module.exports.run = async (bot, message, args) => {
     message.channel.send(`= İSTATİSTİKLER =
 • Bot               :: ${bot.user.tag}
-• Sahibi            :: Enes Onur Ata#9427
+• Sahibi            :: Yusuf Bülbül
 • Hafıza Kullanımı  :: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 • Çalışma Süresi    :: ${upDays} Gün, ${upHours} Saat, ${upMins} Dakika, ${upSecs} Saniye
 • Kullanıcı         :: ${bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}
