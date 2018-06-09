@@ -60,9 +60,9 @@
     let prefix = prefixes[message.guild.id].prefixes;
 	if(message.author.bot) return undefined;
 	if(message.channel.type === 'dm') return ;
-        if(message.content.toLowerCase() === '<@421925809532436481>'){
+        if(message.content.toLowerCase() === '<@419936204117770241>'){
         let embed = new Discord.RichEmbed()
-       .setTitle("Zappara Pro")
+       .setTitle("Scary")
        .addField("Prefix", `\`${prefix}\``, true)
        .addField("Yardım", `\`${prefix}yardım\``, true)
        .setThumbnail(bot.user.displayAvatarURL)
