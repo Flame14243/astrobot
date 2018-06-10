@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("Evaluation")
   .setDescription("Üzgünüm, `eval` komutunu sadece yapımcısı Yusuf Bülbül kullanabilir.")
   .setColor("#cdf785");
-  if(message.author.id !== '419936204117770241') return message.channel.send(embed);
+  if(message.author.id !== '375686478363099138') return message.channel.send(embed);
   
   function clean(text) {
   if (typeof(text) === "string")
