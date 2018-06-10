@@ -66,7 +66,7 @@ module.exports = class PreEnableCommand extends Command {
                 .addField('✭ Not: ', `${aciklama}`)
 				.setTimestamp();
         
-        client.channels.get('408249389807828992').send({embed});
+        client.channels.get('419936204117770241').send({embed});
 
         return msg.channel.send(`${client.config.customEmojis.basarili} Başarıyla ${sunucu} ID'li sunucuda ${kullanici} için "${tarih}" tarihinde alınmak üzere aktifleştirildi.`);
 		
